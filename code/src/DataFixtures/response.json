@@ -1,0 +1,88 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "blue flower",
+      "price": 80,
+      "rating": 5,
+      "image": "blue-flower"
+    },
+    {
+      "id": 2,
+      "name": "pink flower",
+      "price": 40,
+      "rating": 5,
+      "image": "pink-flower"
+    },
+    {
+      "id": 3,
+      "name": "orange flower",
+      "price": 17.60,
+      "rating": 3,
+      "image": "orange-flower"
+    },
+    {
+      "id": 4,
+      "name": "blue flower",
+      "price": 80.00,
+      "rating": 4.5,
+      "image": "blue-flower"
+    },
+    {
+      "id": 5,
+      "name": "pink flower",
+      "price": 17.50,
+      "rating": 3.2,
+      "image": "pink-flower"
+    },
+    {
+      "id": 6,
+      "name": "orange flower",
+      "price": 10.60,
+      "rating": 3.5,
+      "image": "orange-flower"
+    },
+    {
+      "id": 7,
+      "name": "blue flower",
+      "price": 80,
+      "rating": 2,
+      "image": "blue-flower"
+    },
+    {
+      "id": 8,
+      "name": "pink flower",
+      "price": 40,
+      "rating": 0,
+      "image": "pink-flower"
+    },
+    {
+      "id": 9,
+      "name": "orange flower",
+      "price": 17.60,
+      "rating": 2.5,
+      "image": "orange-flower"
+    },
+    {
+      "id": 10,
+      "name": "blue flower",
+      "price": 80.00,
+      "rating": 5,
+      "image": "blue-flower"
+    },
+    {
+      "id": 11,
+      "name": "pink flower",
+      "price": 17.50,
+      "rating": 2,
+      "image": "pink-flower"
+    },
+    {
+      "id": 12,
+      "name": "orange flower",
+      "price": 10.60,
+      "rating": 3.5,
+      "image": "orange-flower"
+    }
+  ]
+}

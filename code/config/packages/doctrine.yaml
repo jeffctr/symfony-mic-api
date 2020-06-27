@@ -1,0 +1,20 @@
+doctrine:
+    dbal:
+        server_version: '10'
+        driver: pdo_pgsql
+        dbname:   '%env(resolve:POSTGRES_DB)%'
+        host:     '%env(resolve:POSTGRES_HOST)%'
+        port:     '%env(resolve:POSTGRES_PORT)%'
+        user:     '%env(resolve:POSTGRES_USER)%'
+        password: '%env(resolve:POSTGRES_PASSWORD)%'
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        auto_mapping: true
+        mappings:
+            App:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Entity'
+                prefix: 'App\Entity'
+                alias: App
