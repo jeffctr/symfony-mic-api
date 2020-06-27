@@ -1,0 +1,22 @@
+# Symgfony defaults
+code/config/secrets/prod/prod.decrypt.private.php
+code/public/bundles/
+code/var/
+code/vendor/
+
+# IDE
+.DS_Store
+
+# Unit Tests
+/code/bin/.phpunit/
+/code/.phpunit.result.cache
+
+# General files
+.env
+.env.test
+docker/local/pgsql
+.idea
+*.swp
+
+# Node
+app/code/node_modules
