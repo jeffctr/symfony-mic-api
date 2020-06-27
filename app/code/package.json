@@ -1,0 +1,28 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js",
+    "watch:ui": "browser-sync start --proxy=0.0.0.0:8000 --files='**/*.css, **/*.pug, **/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify",
+    "build:sass": "node ./sass.js",
+    "build:js": "node ./javascript-min.js",
+    "watch": "onchange 'src/scss/**/*.scss' -- npm run build:sass"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "fs": "0.0.1-security",
+    "mkdirp": "^1.0.4",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "onchange": "^7.0.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "pug": "^3.0.0"
+  }
+}

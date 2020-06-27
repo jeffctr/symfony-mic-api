@@ -1,0 +1,23 @@
+extends layout
+
+block layout-content
+  div.title
+    h1.main-title List Of Products
+  div(class='container' id='product-list')
+  div.container
+    div.form-content
+      h2.form add new proudct
+      div.form-control
+        div.form-group
+          label Product Name
+          input(type='text' name='name' value='')
+        div.form-group
+          label Product Price
+          input(type='text' name='price' value='')
+        div.form-group
+          label Product Rating
+          input(type='text' name='rating' value='')
+        div.form-group
+          label Product Image
+          input(type='text' name='image' value='')
+        button(class='btn-add-product' id='new-product') add new product

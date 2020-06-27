@@ -1,0 +1,23 @@
+.btn, .btn-add-proudct {
+  position: relative;
+  font-size: 15px;
+  text-transform: capitalize;
+  line-height: 1;
+  font-weight: $font-weight-normal;
+  letter-spacing: -1px;
+  text-align: center;
+  color: $bg-lighter-color;
+  border-radius: 3px;
+  border: 2px solid $brand-primary-color;
+  background-color: $brand-primary-color;
+  display: none;
+  padding: 7px $grid-gutter-width;
+  transition: all $st-trans;
+
+  &:hover {
+    background-color: $brand-secondary-color;
+  }
+}
+.btn-add-product {
+  display: block;
+}
