@@ -1,0 +1,64 @@
+version: '3.7'
+
+networks:
+  internalnet:
+    external: true
+    name: localdev
+
+services:
+    nginx-proxy:
+      image: jwilder/nginx-proxy
+      networks:
+        - internalnet
+      container_name: api-ngix
+      restart: on-failure
+      ports:
+        - "80:80"
+      volumes:
+        - /var/run/docker.sock:/tmp/docker.sock:ro
+
+    php:
+      build:
+        context: .
+      networks:
+        - internalnet
+      container_name: shopping-api
+      restart: on-failure
+      environment:
+        VIRTUAL_HOST: shopping-api.docker
+      env_file:
+        - ./code/.env
+      volumes:
+        - ./code:/var/www/html
+        - ./docker/dev/php.ini-development:/usr/local/etc/php/php.ini-development
+        - ./docker/dev/apache.conf:/etc/apache2/sites-available/000-default.conf
+      depends_on:
+        - pgsqldb
+
+    pgsqldb:
+      image: postgres:10
+      networks:
+        - internalnet
+      container_name: shopping-db
+      restart: on-failure
+      ports:
+        - '5432:5432'
+      env_file:
+        - ./code/.env
+      volumes:
+        - ./docker/local/pgsql:/var/lib/postgresql/data
+
+    app:
+      build:
+        context: ./app
+        dockerfile: Dockerfile
+      networks:
+        - internalnet
+      container_name: shopping-app
+      restart: on-failure
+      environment:
+        VIRTUAL_HOST: shopping-app.docker
+      volumes:
+        - ./app/code:/usr/src/app
+      depends_on:
+        - php
