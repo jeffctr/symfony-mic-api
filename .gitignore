@@ -12,8 +12,6 @@ code/vendor/
 /code/.phpunit.result.cache
 
 # General files
-.env
-.env.test
 docker/local/pgsql
 .idea
 *.swp

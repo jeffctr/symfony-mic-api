@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'src/assets')));
  * Routes Definitions
  */
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Home', products });
+  res.render('index', { title: 'Products', products });
 });
 
 /**

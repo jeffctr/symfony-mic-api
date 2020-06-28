@@ -7,6 +7,9 @@ const Products = class {
         document.getElementById('new-product').addEventListener('click', this.add)
     }
 
+    /**
+     * This function will create a GET request to the API and return the response
+     */
     list = () => {
         axios.get(`${this.url}products`)
             .then((response) => {
@@ -21,6 +24,13 @@ const Products = class {
             });
     }
 
+    /**
+     * Create a new product sending the data through the API with a method POST.
+     * The API should be on charge to check if any value is empty or is a valid attribute.
+     *
+     * @param {Object} element
+     * @returns {string}
+     */
     add = (element) => {
         const form = element.target.closest('.form-control')
         if (!form) {
@@ -45,7 +55,6 @@ const Products = class {
             }
         }).then(function (response) {
             console.log(response);
-            list()
         }).catch(function (error) {
             console.log(error);
         });
@@ -61,8 +70,9 @@ const Products = class {
             const icon = this.createTag('span', {className: 'icon', innerText: 'in cart'});
             const isInTheCart = this.isProductInSession(product.id);
 
+            // Create the element that will contain the product image an actions
             const btnWrapper = this.createTag('div', {className: 'btn-wrapper'});
-            btnWrapper.appendChild(this.createTag('img', {className: 'product-img', src: `/img/${product.image}.png` }));
+            btnWrapper.appendChild(this.createTag('img',{ className: 'product-img', src: `/img/${product.image}.png` }));
             btnWrapper.appendChild(this.createTag('div', {className: 'layer'}));
             btnWrapper.appendChild(
                 this.createTag('button', {
@@ -79,6 +89,7 @@ const Products = class {
                     innerText: 'add to cart'
                 }));
 
+            // Create an element with the product details
             const description = this.createTag('div', {className: 'description'});
             description.appendChild(this.createTag('hr', {className: 'horizontal'}))
             description.appendChild(this.createTag('div', {className: 'name', innerText: product.name}));
@@ -104,8 +115,13 @@ const Products = class {
      * @returns {Object}
      */
     buildRating = (rate) => {
-        const rTop = this.createTag('div', {className: `star-rating-top ${rate}`, style: `width: calc(12 * ${rate}px);`});
+        const rTop = this.createTag('div',{
+                className: `star-rating-top ${rate}`,
+                style: `width: calc(12 * ${rate}px);`
+            });
         const rBottom = this.createTag('div', {className: 'star-rating-bottom'});
+
+        // Create five spans for rating purposes
         for(let i=0; i<5; i++) {
             rTop.appendChild(this.createTag('span'));
             rBottom.appendChild(this.createTag('span'));
@@ -179,7 +195,5 @@ document.onreadystatechange = () => {
             'method': 'get',
             'formData': ''
         }).list();
-
-        console.log('Hwllo world');
     }
 };
