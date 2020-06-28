@@ -24,7 +24,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
     && export PATH=/root/composer/vendor/bin:$PATH \
     && composer self-update
 
-# Installing MySQL
+# Installing Database connection
 RUN docker-php-ext-install mysqli pdo pdo_pgsql pdo_mysql
 
 # Installing logs

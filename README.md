@@ -5,21 +5,21 @@ The repository has implemented two well known languages such as `PHP` and `Javas
 
 ## Pre-Requisites to run this respository
 - [Docker](https://docs.docker.com/get-docker/). After installation make sure you have the `docker.sock` in this path `/var/run/docker.sock` (Linux & Mac) 
-- Then, you will need to add the following URLs in to your `hosts`. In this step you will need `root` privileges. .
+- Then, you will need to add the following URLs to your `hosts`. In this step, you will need `root` privileges.
 - Open the following file with your favorite text editor `/etc/hosts`
-- Add these URLs, because we will need then in the next steps to access to them through the browser.
+- Add these URLs, because we will need then in the next steps to get access from a browser.
 ```angular2 
 127.0.0.1	shopping-app.docker
 127.0.0.1	shopping-api.docker 
 ```
 
 ## How to build the containers
-Having [Docker](https://docs.docker.com/get-docker/) installed and the URLs mapped is time to build the containers. This step will create four containers, but each of them have a purpose. Now please open your terminal and tun the following commands.  
+Having [Docker](https://docs.docker.com/get-docker/) installed and the URLs mapped is time to build the containers. This step will create four containers, but each of them has a purpose. Now please open your terminal and run the following commands.  
 1. Clone the repository `git clone git@github.com:jeffctr/symfony-mic-api.git`
 1. Go into the folder that the previous command has created `cd symfony-mic-api`
-1. Run docker compose to build your images. This command will download the [docker images](https://docs.docker.com/get-started/overview/) required to build your containers. Please make sure you have internet connection and be patient because it can take a while `docker-compose build`
-1. After the previous command has finished, is time to start the containers `docker-compose up -d`
-1. If everything was a success congratulations you have [Symfony 5.1](https://symfony.com/doc/current/setup.html) running in your local with a connection to [Postgres 10](https://www.postgresql.org/).
+1. Run docker compose to build your images. This command will download the [docker images](https://docs.docker.com/get-started/overview/) required to build your containers. Please make sure you have an internet connection and be patient because it can take a while `docker-compose build`
+1. After the previous command has finished, its time to start the containers `docker-compose up -d`
+1. If everything was a success congratulation you have [Symfony 5.1](https://symfony.com/doc/current/setup.html) running in your local with a connection to [Postgres 10](https://www.postgresql.org/).
 
 ### Full commands to build and start the containers
 
@@ -41,7 +41,7 @@ The previous output means that everything is up and running. However, now you wo
 - `shopping-app` This container runs `NodeJS`
 - `shopping-api` This container has `Symfony` microservice running with the API
 - `shopping-db`  This container runs the Database in `Postgres 10`
-- `api-ngnx`     This container runs the virtual host to make possible to redirect your browser with the correct hostName.
+- `api-ngnx`     This container runs the virtual host to make it possible to redirect your browser with the correct hostName.
 
 #### Load data fixture
 Now is time to load data into the database, it is a preset data. However, you will need to connect into the `shopping-api` container so run the following commands to make it possible. 
@@ -53,7 +53,7 @@ $ exit                                        # Close the container connection
 ``` 
 
 ### API home page
-Finally, if everything run smoothly you can go to this URL [http://shopping-api.docker](http://shopping-api.docker/index.php/) and check if the API is running, you should be able to see the Symfony welcome page as it shows in the following image. 
+Finally, if everything runs smoothly you can go to this URL [http://shopping-api.docker](http://shopping-api.docker/index.php/) and check if the API is running, you should be able to see the Symfony welcome page as it shows in the following image. 
 
 
 ![symfony-home-page](./screenshots/symfony-home-page.png)
