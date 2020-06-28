@@ -15,7 +15,7 @@ class ProductHelper
         return [
             'id' => $product->getId(),
             'name' => $product->getName(),
-            'price' => $product->getPrice(),
+            'price' => number_format($product->getPrice(), 2),
             'rating' => $product->getRating(),
             'image' => $product->getImage(),
         ];

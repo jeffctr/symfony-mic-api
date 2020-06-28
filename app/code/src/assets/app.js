@@ -45,6 +45,7 @@ const Products = class {
             formData[input.name] = input.value;
         })
 
+        const self = this;
         axios({
             method: 'post',
             url: `${this.url}product`,
@@ -54,10 +55,15 @@ const Products = class {
                 'Access-Control-Allow-Origin': '*',
             }
         }).then(function (response) {
-            console.log(response);
+            setTimeout(() => {
+                const list = document.getElementById('product-list');
+                list.innerHTML = ''
+                self.list();
+            }, 1000);
         }).catch(function (error) {
             console.log(error);
         });
+
     }
 
     /**
@@ -111,7 +117,7 @@ const Products = class {
     /**
      * Build the HTML structure for the products rating
      *
-     * @param {Integer} rate
+     * @param {Float} rate
      * @returns {Object}
      */
     buildRating = (rate) => {
@@ -165,7 +171,6 @@ const Products = class {
             product.classList.add('active');
             // Add product into the cart session without mutation
             session = [...session, product.id]
-            console.log('session', session)
         }
 
         sessionStorage.setItem('cart', session.join(','));

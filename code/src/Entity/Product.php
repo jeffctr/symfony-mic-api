@@ -85,15 +85,15 @@ class Product
     }
 
     /**
-     * @return int
+     * @return float
      */
-    public function getRating(): int
+    public function getRating(): float
     {
         return $this->rating;
     }
 
     /**
-     * @param int $rating
+     * @param float $rating
      */
     public function setRating(float $rating): void
     {
