@@ -80,3 +80,10 @@ $ docker exec -it shopping-app bash  # This command will allow you to connect to
     $ npm run build:sass             # This command will build the css main.min.css & main.css
 ```
 
+## Main Files
+The main file that makes the UI to work in the `app.js` located in `symfony-mic-api/app/code/src/js/app.js`. This file contains the main logic to get data from the API and insert, it has a class that controls the whole logic, as well as the variables that will remain in session if you add any product to the cart. 
+
+The UI is working with `sass` and you can find the structure in `symfony-mic-api/app/code/src/scss`
+
+The main file for makes to work in the  API is the `ProductController.php` located in `symfony-mic-api/code/src/Controller`. This file has the routing and accepts the different requests. 
+
